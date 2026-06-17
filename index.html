@@ -3,89 +3,510 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ENSOL LABS Co., Ltd.</title>
+  <title>ENSOL LABS - Home</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234DB8A0'/><text x='50%25' y='56%25' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='Arial' font-weight='bold'>E</text></svg>">
+  <style>
+    /* ── Home-only styles ── */
+    .home-hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, #e6f9f5 0%, #f4fffe 35%, #eef7ff 70%, #f0fdf4 100%);
+    }
+
+    .home-hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(77,184,160,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77,184,160,.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .home-hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .home-hero-blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, #4DB8A0, transparent 70%);
+      top: -300px; left: -200px;
+      opacity: .13;
+    }
+    .home-hero-blob-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #2D9CDB, transparent 70%);
+      bottom: -200px; right: -100px;
+      opacity: .1;
+    }
+
+    .home-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 80px;
+    }
+
+    .home-hero-text h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    .home-hero-text h1 .accent {
+      background: linear-gradient(135deg, var(--primary), #2abf9e, #2D9CDB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .home-hero-text p {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    /* Floating phone mockup */
+    .home-hero-mockup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .mockup-phone {
+      width: 260px;
+      height: 520px;
+      background: linear-gradient(160deg, #1a2332 0%, #2d3748 100%);
+      border-radius: 40px;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.25),
+        0 0 0 8px rgba(255,255,255,.08),
+        inset 0 0 0 2px rgba(255,255,255,.06);
+      position: relative;
+      overflow: hidden;
+      animation: phoneFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+
+    .mockup-screen {
+      position: absolute;
+      inset: 14px;
+      border-radius: 28px;
+      background: linear-gradient(160deg, #e8f7f4, #f0fdf9);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mockup-screen-header {
+      background: var(--primary);
+      padding: 16px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mockup-screen-header .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.6);
+    }
+
+    .mockup-screen-title {
+      font-size: .65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-left: 4px;
+    }
+
+    .mockup-app-list {
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mockup-app-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+
+    .mockup-app-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .icon-teal   { background: var(--primary-light); }
+    .icon-blue   { background: #e8f4fd; }
+    .icon-purple { background: #f3e8ff; }
+
+    .mockup-app-info { flex: 1; min-width: 0; }
+    .mockup-app-name {
+      font-size: .65rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin-bottom: 2px;
+    }
+    .mockup-app-sub {
+      font-size: .57rem;
+      color: #7a8ba0;
+    }
+
+    .mockup-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: #f0f4f8;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .mockup-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--primary), #2D9CDB);
+    }
+
+    .mockup-float-badge {
+      position: absolute;
+      background: #fff;
+      border-radius: 12px;
+      padding: 8px 12px;
+      box-shadow: var(--shadow-md);
+      font-size: .68rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+
+    .mockup-float-badge .badge-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.3); opacity: .7; }
+    }
+
+    .float-badge-1 {
+      top: 40px;
+      right: -30px;
+    }
+    .float-badge-2 {
+      bottom: 80px;
+      left: -40px;
+    }
+
+    /* ── Scroll indicator ── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+      font-size: .75rem;
+      animation: bounce 2.2s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* Responsive adjustments for home-hero */
+    @media (max-width: 860px) {
+      .home-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 80px 0 60px;
+      }
+      .home-hero-text p { margin: 0 auto 32px; }
+      .home-hero-mockup { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <header class="container header">
-    <nav class="nav">
-      <div class="brand">
-        <div class="logo">ENSOL LABS</div>
-        <div class="small">Co., Ltd.</div>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="apps/index.html">Apps</a>
-        <a href="support/index.html">Support</a>
-        <a href="privacy/moboyeo.html">Privacy</a>
-      </div>
-    </nav>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>ENSOL LABS</h1>
-      <p>Android apps, AI-based software, and educational services.</p>
-      <p class="small">엔솔랩스는 Android 앱, AI 기반 소프트웨어, 교육용 서비스를 개발하는 소프트웨어 회사입니다.</p>
-    </section>
-
-    <section class="section">
-      <h2>Company Information</h2>
-      <div class="info-grid">
-        <div>
-          <p><strong>정식 상호:</strong> 주식회사 엔솔랩스</p>
-          <p><strong>영문명:</strong> ENSOL LABS Co., Ltd.</p>
-          <p><strong>대표자:</strong> 김승한</p>
-          <p><strong>주소:</strong> 서울특별시 영등포구 국회대로36길 6-1, 2층 엠102호(당산동3가)</p>
+  <!-- ── Header ── -->
+  <div class="header" style="position:sticky; top:0; z-index:100; background:rgba(255,255,255,.88); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); box-shadow:0 1px 12px rgba(0,0,0,.06);">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <div class="logo">ENSOL LABS</div>
+          <div class="small">Co., Ltd.</div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="apps/index.html">Apps</a>
+          <a href="support/index.html">Support</a>
+          <a href="privacy/moboyeo.html">Privacy</a>
         </div>
-        <div>
-          <p><strong>사업 영역:</strong></p>
-          <ul>
-            <li>Android 앱 개발</li>
-            <li>AI 기반 소프트웨어 개발</li>
-            <li>교육용 소프트웨어</li>
-            <li>생활 관리 및 기록 앱</li>
-            <li>데이터 분석 및 엔지니어링 소프트웨어</li>
-          </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="home-hero">
+    <div class="home-hero-bg">
+      <div class="home-hero-grid-lines"></div>
+      <div class="home-hero-blob home-hero-blob-1"></div>
+      <div class="home-hero-blob home-hero-blob-2"></div>
+    </div>
+    <div class="container">
+      <div class="home-hero-inner">
+        <!-- Text -->
+        <div class="home-hero-text">
+          <div class="hero-tag" style="justify-content:flex-start;">
+            <span>✨</span> ENSOL LABS
+          </div>
+          <h1>
+            더 나은 습관,<br>
+            <span class="accent">더 나은 일상</span>을<br>
+            앱으로 만들다
+          </h1>
+          <p>건강·학습·기록을 주제로 한 실용적인 모바일 앱을 개발합니다. 사용자의 작은 변화가 큰 성장으로 이어지도록 돕는 것이 저희의 미션입니다.</p>
+          <div class="hero-cta-group" style="justify-content:flex-start;">
+            <a href="apps/index.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              앱 소개 보기
+            </a>
+            <a href="support/index.html" class="btn btn-outline">문의하기</a>
+          </div>
+        </div>
+
+        <!-- Mockup -->
+        <div class="home-hero-mockup">
+          <div class="mockup-phone">
+            <div class="mockup-screen">
+              <div class="mockup-screen-header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <span class="mockup-screen-title">ENSOL LABS Apps</span>
+              </div>
+              <div class="mockup-app-list">
+                <div class="mockup-app-item">
+                  <div class="mockup-app-icon icon-teal">💇</div>
+                  <div class="mockup-app-info">
+                    <div class="mockup-app-name">모보여</div>
+                    <div class="mockup-app-sub">Hair Tracking</div>
+                    <div class="mockup-bar"><div class="mockup-bar-fill" style="width:72%"></div></div>
+                  </div>
+                </div>
+                <div class="mockup-app-item">
+                  <div class="mockup-app-icon icon-blue">👁️</div>
+                  <div class="mockup-app-info">
+                    <div class="mockup-app-name">눈돌아</div>
+                    <div class="mockup-app-sub">Eye Care</div>
+                    <div class="mockup-bar"><div class="mockup-bar-fill" style="width:58%"></div></div>
+                  </div>
+                </div>
+                <div class="mockup-app-item">
+                  <div class="mockup-app-icon icon-purple">🔬</div>
+                  <div class="mockup-app-info">
+                    <div class="mockup-app-name">디딤</div>
+                    <div class="mockup-app-sub">Science Learning</div>
+                    <div class="mockup-bar"><div class="mockup-bar-fill" style="width:45%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-float-badge float-badge-1">
+            <span class="badge-dot"></span>
+            개발 진행 중
+          </div>
+          <div class="mockup-float-badge float-badge-2">
+            🚀 2026 출시 목표
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section">
-      <h2>Apps</h2>
-      <div class="apps-grid">
-        <article class="app-card">
-          <h3>모보여</h3>
-          <p class="small">헤어라인과 머리숱 변화를 사진으로 기록하고 시간에 따른 변화를 확인할 수 있는 개인 기록 앱입니다.</p>
-          <p><a href="apps/index.html#moboyeo">자세히 보기</a></p>
-        </article>
+    <!-- Scroll hint -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
 
-        <article class="app-card">
-          <h3>눈돌아</h3>
-          <p class="small">눈 휴식과 눈 운동 루틴을 도와주는 생활 습관 관리 앱입니다.</p>
-          <p><a href="apps/index.html#nundora">자세히 보기</a></p>
-        </article>
-
-        <article class="app-card">
-          <h3>디딤</h3>
-          <p class="small">초등 고학년 및 중학생을 위한 과학 학습 보조 앱입니다.</p>
-          <p><a href="apps/index.html#didim">자세히 보기</a></p>
-        </article>
+  <!-- ── App Cards Row ── -->
+  <section class="section-wrapper" style="background:#fff; border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>개발 중인 앱</h2>
+        <p>ENSOL LABS의 세 가지 핵심 앱을 소개합니다</p>
       </div>
-    </section>
+      <div class="home-apps-grid">
 
-    <section class="section">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><strong>Email:</strong> <a href="mailto:contact@ensol-labs.co.kr">contact@ensol-labs.co.kr</a></li>
-        <li><strong>Website:</strong> <a href="https://ensol-labs.co.kr">https://ensol-labs.co.kr</a></li>
-        <li class="small">Company information and privacy policies available via the Privacy menu.</li>
-      </ul>
-    </section>
-  </main>
+        <a href="apps/index.html#moboyeo" class="home-app-card reveal">
+          <div class="home-app-card-thumb">
+            <img src="assets/images/moboyeo.jpg" alt="모보여">
+            <div class="home-app-card-thumb-overlay"></div>
+            <div class="home-app-icon">💇</div>
+          </div>
+          <div class="home-app-card-body">
+            <h3>모보여</h3>
+            <p>헤어라인과 머리숱 변화를 사진으로 기록하고 타임라인으로 확인하는 개인 기록 앱</p>
+            <span class="badge badge-teal">Health &amp; Tracking</span>
+          </div>
+        </a>
 
+        <a href="apps/index.html#nundora" class="home-app-card reveal">
+          <div class="home-app-card-thumb">
+            <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600&q=80&auto=format&fit=crop" alt="눈돌아">
+            <div class="home-app-card-thumb-overlay"></div>
+            <div class="home-app-icon">👁️</div>
+          </div>
+          <div class="home-app-card-body">
+            <h3>눈돌아</h3>
+            <p>눈 휴식과 눈 운동 루틴을 도와주는 생활 습관 관리 앱</p>
+            <span class="badge badge-blue">Eye Care</span>
+          </div>
+        </a>
+
+        <a href="apps/index.html#didim" class="home-app-card reveal">
+          <div class="home-app-card-thumb">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80&auto=format&fit=crop" alt="디딤">
+            <div class="home-app-card-thumb-overlay"></div>
+            <div class="home-app-icon">🔬</div>
+          </div>
+          <div class="home-app-card-body">
+            <h3>디딤</h3>
+            <p>초등 고학년 및 중학생을 위한 과학 학습 보조 앱</p>
+            <span class="badge badge-amber">Education</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Values ── -->
+  <section class="section-wrapper">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>저희가 추구하는 가치</h2>
+        <p>사용자 중심의 앱 개발 철학</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">💡</div>
+          <h3>실용성</h3>
+          <p>일상에서 실제로 사용 가능한, 불필요한 기능 없이 핵심에 집중한 앱을 만듭니다.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🔒</div>
+          <h3>개인 정보 보호</h3>
+          <p>사용자의 민감한 데이터는 기기 내에 안전하게 보관되며, 불필요한 수집을 하지 않습니다.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🌱</div>
+          <h3>지속적 개선</h3>
+          <p>사용자 피드백을 반영하여 지속적으로 앱을 개선하고 성장해 나갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="section-wrapper" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop" alt="ENSOL LABS 개발 환경">
+        </div>
+        <div class="about-content">
+          <div class="hero-tag" style="margin-bottom:16px; justify-content:flex-start;">About Us</div>
+          <h2>ENSOL LABS에 대해</h2>
+          <p>ENSOL LABS는 사람들의 일상에 긍정적인 변화를 만드는 모바일 앱 개발사입니다. 건강 추적부터 눈 건강 관리, 과학 학습까지 – 작지만 꾸준한 습관이 큰 변화를 만든다고 믿습니다.</p>
+          <p>저희는 불필요한 복잡함 없이, 실용적이고 직관적인 앱을 통해 사용자의 삶에 실질적인 가치를 더하겠습니다.</p>
+          <a href="apps/index.html" class="btn btn-primary" style="margin-top:8px;">앱 보러 가기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>앱 출시 소식을 받고 싶으신가요?</h2>
+      <p>지원 페이지를 통해 문의를 남기시면 최신 소식을 알려드립니다.</p>
+      <a href="support/index.html" class="btn btn-white">Support 바로가기 →</a>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
   <footer class="footer">
-    © 2026 ENSOL LABS Co., Ltd. All rights reserved.
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">ENSOL LABS</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="apps/index.html">Apps</a>
+          <a href="support/index.html">Support</a>
+          <a href="privacy/moboyeo.html">Privacy</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 ENSOL LABS Co., Ltd. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle?.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
