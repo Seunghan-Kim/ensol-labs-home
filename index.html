@@ -1,124 +1,1021 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="ENSOL LABS는 기계 시스템의 소음·진동 문제를 진단하고, 전용 측정 하드웨어와 분석 소프트웨어를 통해 고객이 직접 운영할 수 있는 시스템으로 구현합니다.">
-  <meta name="theme-color" content="#071d29">
-  <title>기계 소음·진동 진단 및 측정 시스템 | ENSOL LABS</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/home.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300A887'/><text x='50%25' y='56%25' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='Arial' font-weight='bold'>E</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="제품과 설비의 소음진동 측정, NVH 시험, FFT·Order·공진 분석부터 원인 규명과 사내 측정 시스템 구축까지 지원합니다.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#F2F9F7">
+<title>소음진동 측정·NVH 시험 및 진동 분석 | ENSOL LABS</title>
+
+<link rel="canonical" href="https://www.ensol-labs.co.kr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ENSOL LABS">
+<meta property="og:title" content="소음진동 측정·NVH 시험 및 진동 분석 | ENSOL LABS">
+<meta property="og:description" content="제품과 설비의 소음·진동 문제를 측정하고 원인을 분석합니다. 반복 업무는 전용 하드웨어와 소프트웨어 시스템으로 구현합니다.">
+<meta property="og:url" content="https://www.ensol-labs.co.kr/">
+<meta property="og:image" content="https://www.ensol-labs.co.kr/assets/images/hero-nvh-measurement.jpg">
+<meta property="og:image:width" content="1838">
+<meta property="og:image:height" content="856">
+<meta property="og:image:alt" content="전동기 회전체 시험 리그에 설치된 진동 가속도 센서와 데이터 수집 장치">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="소음진동 측정·NVH 시험 및 진동 분석 | ENSOL LABS">
+<meta name="twitter:description" content="소음·진동 진단부터 측정 시스템 내재화까지 지원합니다.">
+<meta name="twitter:image" content="https://www.ensol-labs.co.kr/assets/images/hero-nvh-measurement.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="assets/images/hero-nvh-measurement.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231A2332'/><g stroke='%234DB8A0' stroke-width='2.4' stroke-linecap='round'><line x1='7' y1='16' x2='9' y2='16'/><line x1='12' y1='11' x2='12' y2='21'/><line x1='16' y1='6' x2='16' y2='26'/><line x1='20' y1='11' x2='20' y2='21'/><line x1='24' y1='14' x2='24' y2='18'/></g></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.ensol-labs.co.kr/#website",
+      "url": "https://www.ensol-labs.co.kr/",
+      "name": "ENSOL LABS",
+      "alternateName": "엔솔랩스",
+      "inLanguage": "ko-KR",
+      "publisher": { "@id": "https://www.ensol-labs.co.kr/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.ensol-labs.co.kr/#organization",
+      "name": "ENSOL LABS Co., Ltd.",
+      "alternateName": "엔솔랩스",
+      "url": "https://www.ensol-labs.co.kr/",
+      "email": "contact@ensol-labs.co.kr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "국회대로36길 6-1, 2층 엠102호(당산동3가)",
+        "addressLocality": "영등포구",
+        "addressRegion": "서울특별시",
+        "addressCountry": "KR"
+      },
+      "description": "기계 시스템의 소음·진동 문제를 측정하고 원인을 분석하며, 반복 가능한 측정 하드웨어와 분석 소프트웨어 구축을 지원하는 엔지니어링 회사입니다."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ensol-labs.co.kr/#nvh-service",
+      "name": "소음진동 측정 및 NVH 엔지니어링",
+      "serviceType": [
+        "소음진동 측정",
+        "NVH 시험",
+        "진동 분석",
+        "FFT 및 PSD 분석",
+        "Order Tracking",
+        "FRF 및 구조 공진 분석",
+        "소음·진동 데이터 분석",
+        "측정 시스템 구축"
+      ],
+      "provider": { "@id": "https://www.ensol-labs.co.kr/#organization" },
+      "areaServed": { "@type": "Country", "name": "대한민국" },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "제조기업, 제품 개발팀, 스타트업 및 설비 운영 기업"
+      },
+      "description": "제품과 설비의 이상 진동, 이음, 특정 RPM 진동과 구조 공진 문제를 측정·분석하고 원인 규명, 개선 검증 및 사내 운영 시스템 구축을 지원합니다."
+    }
+  ]
+}
+</script>
+
+<style>
+/* ==========================================================================
+   ENSOL LABS · v2-B "Editorial Engineering" · LIGHT
+   Palette: Warm Off-White / Deep Terracotta
+   ========================================================================== */
+:root{
+  --bg:            #F2F9F7;   /* mint-tinted off-white */
+  --bg-2:          #E6F2EE;   /* slightly deeper mint cream */
+  --surface:       #FFFFFF;
+  --surface-2:     #F7FBFA;
+  --line:          rgba(26,50,44,.10);
+  --line-strong:   rgba(26,50,44,.20);
+  --ink:           #1A2332;   /* primary text */
+  --ink-2:         #2E3F4E;
+  --muted:         #4A5568;
+  --dim:           #7A8BA0;
+  --accent:        #3A9E88;   /* primary-dark — reads on light mint bg */
+  --accent-hi:     #2A8571;
+  --accent-dim:    rgba(77,184,160,.14);
+  --max:           1200px;
+  --gutter:        clamp(20px,4vw,56px);
+  --sans:          'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:          'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;background:none;border:0;cursor:pointer;color:inherit}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{width:min(var(--max),calc(100% - var(--gutter)*2));margin:0 auto}
+.mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+
+/* ---------- HEADER ---------- */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(242,249,247,.85);
+  backdrop-filter:saturate(160%) blur(18px);
+  -webkit-backdrop-filter:saturate(160%) blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:26px;height:22px;display:flex;align-items:end;gap:2.5px}
+.brand-mark i{background:var(--accent);width:3px;border-radius:1px}
+.brand-mark i:nth-child(1){height:35%}
+.brand-mark i:nth-child(2){height:65%}
+.brand-mark i:nth-child(3){height:100%}
+.brand-mark i:nth-child(4){height:65%}
+.brand-mark i:nth-child(5){height:45%}
+.brand-name{font-weight:800;font-size:.97rem;letter-spacing:.01em}
+.brand-name em{font-style:normal;color:var(--muted);font-weight:500;margin-left:6px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:9px 14px;font-size:1.02rem;font-weight:500;color:var(--ink-2);transition:color .15s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  margin-left:8px;padding:11px 20px !important;
+  color:var(--ink) !important;
+  border:1px solid var(--line-strong);
+  transition:border-color .15s, color .15s, background .15s;
+}
+.nav-cta:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.nav-toggle{display:none;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.nav-toggle i{width:22px;height:2px;background:var(--ink);border-radius:1px;transition:.2s}
+.nav-cta{color:var(--ink) !important}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:80px 0 40px;overflow:hidden}
+.hero-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:.7rem;
+  color:var(--dim);letter-spacing:.08em;
+}
+.hero-meta .hero-eyebrow{color:var(--accent)}
+.hero-meta .hero-eyebrow::before{content:'● ';font-size:.8em}
+
+.hero-headline{
+  position:relative;padding:24px 0 40px;
+  font-size:clamp(2.6rem, 7.2vw, 6.4rem);
+  font-weight:800;line-height:1.02;letter-spacing:-.055em;
+  color:var(--ink);word-break:keep-all;
+  max-width:14ch;
+}
+.hero-headline em{font-style:normal;color:var(--accent);position:relative;white-space:nowrap}
+.hero-headline em::after{
+  content:'';position:absolute;left:0;right:0;bottom:.04em;height:.06em;
+  background:currentColor;opacity:.25;
+}
+
+.hero-two-col{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:end;
+  padding-bottom:56px;border-bottom:1px solid var(--line);
+}
+.hero-lead{
+  color:var(--ink-2);font-size:1.08rem;line-height:1.85;
+  max-width:56ch;margin:0;word-break:keep-all;
+}
+.hero-lead b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:16px 24px;
+  font-size:.9rem;font-weight:700;letter-spacing:.01em;
+  border:1px solid transparent;
+  transition:transform .15s, background .15s, color .15s, border-color .15s;
+  border-radius:2px;
+}
+.btn-primary{color:#FFFFFF;background:var(--accent)}
+.btn-primary:hover{background:var(--accent-hi);transform:translateY(-2px)}
+.btn-ghost{color:var(--ink);border-color:var(--line-strong);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* Hero image band — full-bleed placeholder */
+.hero-band{
+  margin-top:40px;
+  height:clamp(220px,32vw,360px);
+  position:relative;overflow:hidden;
+  border:1px solid var(--line-strong);
+  background:var(--ink);
+}
+.hero-band > img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 54%}
+.hero-band::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,rgba(8,27,31,.74) 0%,rgba(8,27,31,.16) 50%,rgba(8,27,31,.5) 100%),
+    linear-gradient(180deg,transparent 48%,rgba(8,27,31,.54) 100%);
+}
+.hero-band-content{
+  position:relative;z-index:2;height:100%;padding:32px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.hero-band-label{
+  font-family:var(--mono);font-size:.72rem;color:#8EE3CF;
+  letter-spacing:.14em;
+}
+.hero-band-label small{display:block;color:rgba(255,255,255,.82);margin-top:4px;font-weight:400}
+.hero-band-corner{
+  font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.75);
+  letter-spacing:.14em;text-align:right;
+}
+.hero-band-plus{position:absolute;z-index:2;color:#fff;font-family:var(--mono);font-size:1.1rem;opacity:.75}
+.hero-band-plus.tl{top:12px;left:12px}
+.hero-band-plus.tr{top:12px;right:12px}
+.hero-band-plus.bl{bottom:12px;left:12px}
+.hero-band-plus.br{bottom:12px;right:12px}
+
+/* ---------- SECTION SHARED ---------- */
+.section{padding:140px 0;border-top:1px solid var(--line);position:relative}
+.section-head{margin-bottom:80px;display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:end}
+.section-eyebrow{
+  font-family:var(--mono);font-size:.72rem;font-weight:500;
+  color:var(--accent);letter-spacing:.16em;
+  margin-bottom:20px;display:flex;align-items:center;gap:12px;
+}
+.section-eyebrow small{display:none}
+.section h2{
+  font-size:clamp(1.9rem,4vw,3.2rem);
+  font-weight:800;line-height:1.18;letter-spacing:-.035em;
+  margin:0;color:var(--ink);word-break:keep-all;
+  max-width:16ch;
+}
+.section-sub{color:var(--ink-2);font-size:.98rem;line-height:1.85;word-break:keep-all;margin:0;max-width:44ch;justify-self:end}
+
+/* ---------- PROBLEMS (vertical list — matched to APPROACH scale) ---------- */
+.problems{border-top:1px solid var(--line-strong)}
+.problem-row{
+  display:grid;grid-template-columns:200px 1fr 1fr;gap:48px;
+  padding:44px 0;border-bottom:1px solid var(--line);
+  align-items:start;
+  transition:padding-left .25s, background .25s;
+  cursor:default;
+}
+.problem-row:hover{background:linear-gradient(90deg,var(--accent-dim),transparent 60%);padding-left:16px}
+.problem-num{
+  font-family:var(--mono);
+  font-size:clamp(3rem,6vw,5rem);font-weight:400;
+  color:var(--accent);letter-spacing:-.02em;line-height:1;
+}
+.problem-title{
+  margin:0;font-size:1.35rem;font-weight:700;
+  line-height:1.35;letter-spacing:-.02em;
+  color:var(--ink);word-break:keep-all;
+}
+.problem-desc{color:var(--ink-2);font-size:1.14rem;line-height:1.8;margin:0;word-break:keep-all}
+
+/* ---------- APPROACH (vertical timeline, big numbers) ---------- */
+.approach{background:var(--bg-2)}
+.approach .compare{background:var(--surface)}
+.timeline{position:relative;padding-left:0}
+.tl-row{
+  display:grid;grid-template-columns:200px 1fr 1fr;gap:48px;
+  padding:44px 0;
+  border-bottom:1px solid var(--line);
+  align-items:start;
+  position:relative;
+}
+.tl-row:first-child{border-top:1px solid var(--line-strong)}
+.tl-num{
+  font-family:var(--mono);
+  font-size:clamp(3rem,6vw,5rem);font-weight:400;
+  color:var(--accent);letter-spacing:-.02em;line-height:1;
+}
+.tl-content h3{
+  margin:0 0 12px;font-size:1.35rem;font-weight:700;
+  letter-spacing:-.02em;color:var(--ink);word-break:keep-all;
+}
+.tl-tag{display:none}
+.tl-content p{margin:0;color:var(--ink-2);font-size:1.14rem;line-height:1.8;word-break:keep-all}
+.tl-detail{color:var(--ink-2);font-size:1.02rem;line-height:1.8;word-break:keep-all}
+.tl-detail strong{display:none}
+
+.compare{
+  margin-top:56px;padding:40px;
+  display:grid;grid-template-columns:1fr 1px 1fr;gap:40px;
+  background:var(--surface);border:1px solid var(--line);
+}
+.compare .divider{background:var(--line);height:100%}
+.compare > div{display:flex;flex-direction:column;gap:12px}
+.compare small{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.12em}
+.compare h4{margin:0;font-size:1.15rem;font-weight:700;color:var(--ink-2);letter-spacing:-.02em;word-break:keep-all}
+.compare > div:last-child h4{color:var(--accent)}
+.compare p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.7}
+
+/* ---------- SOLUTIONS (vertical, numbered — matched to APPROACH scale) ---------- */
+.sol-list-wrap{border-top:1px solid var(--line-strong)}
+.sol-row{
+  padding:44px 0;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:200px 1fr 1fr;gap:48px;
+  align-items:start;
+  transition:background .25s;
+}
+.sol-row:hover{background:linear-gradient(90deg,var(--accent-dim),transparent 70%)}
+.sol-index{
+  font-family:var(--mono);
+  font-size:clamp(3rem,6vw,5rem);font-weight:400;color:var(--accent);
+  line-height:1;letter-spacing:-.02em;
+}
+.sol-index small{display:none}
+.sol-body h3{
+  margin:0 0 12px;font-size:1.35rem;font-weight:700;
+  letter-spacing:-.02em;color:var(--ink);word-break:keep-all;
+}
+.sol-body p{margin:0 0 20px;color:var(--ink-2);font-size:1.14rem;line-height:1.8;word-break:keep-all;max-width:56ch}
+.sol-tags{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;
+  list-style:none;padding:0;margin:0;
+}
+.sol-tags li{
+  position:relative;padding-left:18px;
+  font-size:1.02rem;color:var(--ink-2);line-height:1.8;
+}
+.sol-tags li::before{
+  content:'';position:absolute;left:0;top:.65em;
+  width:8px;height:1px;background:var(--accent);
+}
+
+/* ---------- CONTACT (LIGHT) ---------- */
+.contact{background:var(--bg-2);color:var(--ink);border-bottom:none;padding-bottom:140px}
+.contact .section-eyebrow{color:var(--accent)}
+.contact .section-eyebrow::before{background:var(--accent)}
+.contact .section-eyebrow small{color:var(--dim)}
+.contact-headline{
+  font-size:clamp(2rem,5vw,4rem);
+  font-weight:800;line-height:1.1;letter-spacing:-.04em;
+  margin:0 0 32px;color:var(--ink);word-break:keep-all;
+  max-width:18ch;
+}
+.contact-headline em{font-style:normal;color:var(--accent)}
+.contact-lead{
+  max-width:56ch;color:var(--ink-2);font-size:1.02rem;
+  line-height:1.85;margin:0 0 48px;word-break:keep-all;
+}
+.contact-mail{
+  display:inline-flex;align-items:center;gap:14px;
+  padding-bottom:10px;font-family:var(--mono);font-size:1.15rem;font-weight:700;
+  color:var(--accent);border-bottom:2px solid rgba(58,158,136,.4);
+  transition:border-color .15s, color .15s;
+}
+.contact-mail:hover{border-color:var(--accent);color:var(--accent-hi)}
+
+.contact-cards{
+  margin-top:72px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--line-strong);
+  border:1px solid var(--line-strong);
+}
+.contact-card{
+  padding:40px 32px;background:var(--surface);
+  display:flex;flex-direction:column;gap:18px;
+  min-height:260px;
+  transition:background .2s;
+  position:relative;
+  color:var(--ink);
+}
+.contact-card:hover{background:var(--surface-2)}
+.contact-card b,
+.contact-card small,
+.contact-card .go{display:none}
+.contact-card h3{
+  margin:0;font-size:1.22rem;font-weight:700;color:var(--ink);
+  line-height:1.4;word-break:keep-all;letter-spacing:-.02em;
+}
+.contact-card p{
+  margin:0;color:var(--muted);font-size:.95rem;line-height:1.75;
+  word-break:keep-all;
+}
+.contact-card .tags{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:20px;
+  list-style:none;padding-left:0;
+}
+.contact-card .tags li{
+  font-family:var(--mono);font-size:.7rem;color:var(--muted);
+  letter-spacing:.06em;padding:5px 10px;
+  border:1px solid var(--line);border-radius:2px;
+  background:var(--bg);
+  transition:border-color .15s, color .15s;
+}
+.contact-card:hover .tags li{border-color:var(--line-strong)}
+.contact-card .arrow{
+  position:absolute;top:32px;right:28px;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  color:var(--dim);font-size:1.1rem;
+  transition:color .2s, transform .2s;
+}
+.contact-card:hover .arrow{color:var(--accent);transform:translate(4px,-4px)}
+
+/* ---------- FAQ ---------- */
+.faq-list{border-top:1px solid var(--line-strong)}
+.faq-row{
+  display:grid;grid-template-columns:200px 1fr 1fr;gap:48px;
+  padding:40px 0;border-bottom:1px solid var(--line);align-items:start;
+}
+.faq-row dt{font-size:1.17rem;font-weight:700;line-height:1.5;letter-spacing:-.02em;word-break:keep-all}
+.faq-row dd{margin:0;color:var(--ink-2);font-size:1rem;line-height:1.85;word-break:keep-all}
+.faq-mark{
+  font-family:var(--mono);
+  font-size:clamp(3rem,6vw,5rem);font-weight:400;
+  color:var(--accent);letter-spacing:-.02em;line-height:1;
+}
+
+/* ---------- FOOTER (LIGHT) ---------- */
+.foot{padding:64px 0 40px;background:var(--bg);color:var(--ink);border-top:1px solid var(--line-strong)}
+.foot-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:56px}
+.foot .brand-name{color:var(--ink)}
+.foot .brand-name em{color:var(--muted)}
+.foot-brand p{margin:16px 0 0;color:var(--muted);font-size:.82rem;line-height:1.7;max-width:36ch}
+.foot-brand p span{display:block}
+.foot-col small{
+  display:block;font-family:var(--mono);font-size:.62rem;
+  color:var(--dim);letter-spacing:.14em;margin-bottom:16px;
+}
+.foot-col a{display:block;padding:6px 0;color:var(--ink-2);font-size:.86rem;transition:color .15s}
+.foot-col a:hover{color:var(--accent)}
+.foot-links{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}
+.foot-links a{display:inline-block;padding:0}
+.foot-address{margin:8px 0 0;color:var(--muted);font-size:.82rem;line-height:1.75;font-style:normal;word-break:keep-all}
+.foot-bottom{
+  margin-top:56px;padding-top:24px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:.68rem;color:var(--dim);letter-spacing:.05em;
+}
+
+/* ---------- BACK TO TOP ---------- */
+.top-button{
+  position:fixed;
+  right:max(24px,env(safe-area-inset-right));
+  bottom:max(24px,env(safe-area-inset-bottom));
+  z-index:90;
+  width:56px;height:56px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  color:#fff;background:var(--ink);
+  border:1px solid rgba(255,255,255,.22);border-radius:2px;
+  box-shadow:0 10px 28px rgba(26,35,50,.18);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(12px);
+  transition:opacity .2s,visibility .2s,transform .2s,background .15s;
+}
+.top-button.visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.top-button:hover{background:var(--accent)}
+.top-button:focus-visible{outline:3px solid rgba(58,158,136,.35);outline-offset:3px}
+.top-button span{font-family:var(--mono);font-size:1rem;line-height:1}
+.top-button small{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.08em}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1020px){
+  .hero-two-col{grid-template-columns:1fr;gap:32px;align-items:start}
+  .section-head{grid-template-columns:1fr;gap:20px}
+  .section-sub{justify-self:start}
+  .problem-row{grid-template-columns:80px 1fr;gap:20px}
+  .problem-desc{grid-column:2}
+  .tl-row{grid-template-columns:100px 1fr;gap:24px}
+  .tl-detail{grid-column:1/-1;padding-left:0}
+  .compare{grid-template-columns:1fr;gap:20px}
+  .compare .divider{display:none}
+  .sol-row{grid-template-columns:80px 1fr;gap:24px}
+  .sol-tags{grid-column:1/-1}
+  .faq-row{grid-template-columns:80px 1fr;gap:24px}
+  .faq-row dd{grid-column:2}
+  .contact-cards{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav-toggle{display:flex}
+  .nav-links{
+    display:none;position:absolute;top:66px;left:0;right:0;
+    flex-direction:column;align-items:stretch;padding:12px;gap:2px;
+    background:var(--bg-2);border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 16px}
+  .nav-cta{text-align:center;margin-top:6px;padding:12px !important}
+  .hero{padding:48px 0 32px}
+  .section{padding:88px 0}
+  .problem-row{grid-template-columns:60px 1fr;padding:28px 0}
+  .tl-row{grid-template-columns:60px 1fr;padding:32px 0}
+  .tl-num{font-size:2.6rem}
+  .sol-row{grid-template-columns:60px 1fr;padding:40px 0}
+  .sol-index{font-size:2rem}
+  .sol-tags{grid-template-columns:1fr}
+  .faq-row{grid-template-columns:48px 1fr;gap:12px;padding:28px 0}
+  .faq-row dd{grid-column:2}
+  .faq-mark{font-size:2rem}
+  .foot-inner{grid-template-columns:1fr;gap:32px}
+  .foot-bottom{flex-direction:column;gap:14px;align-items:flex-start}
+  .top-button{right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));width:50px;height:50px}
+}
+</style>
 </head>
-<body class="en-page">
-  <header class="en-header" id="top">
-    <div class="en-container en-nav">
-      <a href="#top" class="en-brand" aria-label="ENSOL LABS 홈"><span class="en-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><strong>ENSOL LABS</strong></a>
-      <button class="en-toggle" id="navToggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><i></i><i></i><i></i></button>
-      <nav class="en-links" id="navLinks" aria-label="주요 메뉴"><a href="#approach">접근 방식</a><a href="#solutions">솔루션</a><a href="#applications">적용 분야</a><a href="#roadmap">기술 방향</a><a class="en-nav-cta" href="#contact">기술 문의</a></nav>
+<body>
+
+<!-- ========================================================================
+     NAV
+     ==================================================================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="ENSOL LABS 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="brand-name">ENSOL LABS <em>Co., Ltd.</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <i></i><i></i><i></i>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="주요 메뉴">
+      <a href="#problems">문제</a>
+      <a href="#approach">접근 방식</a>
+      <a href="#solutions">서비스</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">문제 상담 →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ========================================================================
+     HERO
+     ==================================================================== -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="hero-headline reveal">
+      소음·진동 측정과 NVH 시험,<br>내부에 <em>전문가가 없어도</em><br>해결할 수 있습니다.
+    </h1>
+
+    <div class="hero-two-col">
+      <p class="hero-lead reveal">
+        제품 개발과 시험 과정에서 발생하는 소음·진동을 측정하고,
+        FFT·Order Tracking 등 NVH 시험 데이터로 원인을 분석합니다.
+        <b>NVH 전담 인력이나 전문 계측 시스템을 갖추기 어려운 제조기업과 스타트업</b>을 위해
+        필요한 시험부터 데이터 분석, 원인 규명, 시스템 구현까지 지원합니다.
+      </p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#contact">
+          소음·진동 문제 상담하기
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href="#solutions">서비스 살펴보기</a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="en-hero">
-      <div class="en-grid-bg"></div>
-      <div class="en-container en-hero-layout">
-        <div class="en-reveal">
-          <p class="en-kicker">● &nbsp; NOISE &amp; VIBRATION SYSTEM ENGINEERING</p>
-          <h1>소음·진동 문제를 해결하고,<br><em>스스로 관리할 수 있는 시스템</em>으로 만듭니다.</h1>
-          <p class="en-lead">제품과 설비의 소음·진동 문제를 측정하고 데이터로 원인을 분석합니다. 반복적인 측정과 관리가 필요하다면 전용 하드웨어와 소프트웨어를 구현해 문제 해결 역량이 고객 내부에 남도록 지원합니다.</p>
-          <div class="en-actions"><a class="en-btn en-primary" href="#contact">현재 문제 상담하기 <b>→</b></a><a class="en-btn en-outline" href="#solutions">솔루션 살펴보기</a></div>
-          <ul class="en-points"><li><b>01</b> 문제 진단</li><li><b>02</b> 시스템 구현</li><li><b>03</b> 운영 내재화</li></ul>
+    <div class="hero-band reveal" aria-label="ENSOL LABS 소음·진동 시스템 엔지니어링">
+      <img src="assets/images/hero-nvh-measurement.jpg" width="1838" height="856" loading="eager" fetchpriority="high" alt="전동기 회전체 시험 리그에 설치된 진동 가속도 센서와 데이터 수집 장치">
+      <span class="hero-band-plus tl">+</span>
+      <span class="hero-band-plus tr">+</span>
+      <span class="hero-band-plus bl">+</span>
+      <span class="hero-band-plus br">+</span>
+      <div class="hero-band-content">
+        <div class="hero-band-label">
+          MEASURE · ANALYZE · INTERNALIZE
+          <small>Noise &amp; Vibration System Engineering</small>
         </div>
-        <div class="en-signal en-reveal" aria-label="진단에서 내재화까지의 흐름">
-          <p>ENGINEERING SCOPE <span>LIVE SIGNAL</span></p>
-          <svg viewBox="0 0 520 150" role="img" aria-label="진동 신호 파형 예시"><defs><linearGradient id="wave" x1="0" x2="1"><stop stop-color="#45d6b9"/><stop offset="1" stop-color="#64aef8"/></linearGradient></defs><path d="M0 76c25 0 27-3 43 0s18 7 29 0 19-34 29 0 20 44 31 0 18-16 29 0 20 7 34 0 20-58 31 0 23 57 34 0 19-24 30 0 19 16 32 0 20-45 32 0 21 39 33 0 20-14 33 0 20 4 35 0 23-27 33 0 19 13 32 0"/></svg>
-          <div class="en-flow"><article><b>01</b><strong>DIAGNOSE</strong><span>측정 · 원인 분석</span></article><i>→</i><article><b>02</b><strong>BUILD</strong><span>HW · SW 구현</span></article><i>→</i><article><b>03</b><strong>INTERNALIZE</strong><span>운영 · 데이터 축적</span></article></div>
+        <div class="hero-band-corner">
+          ENSOL / NVH<br>SYSTEM&nbsp;01
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="en-section en-white">
-      <div class="en-container">
-        <header class="en-heading en-reveal"><p class="en-kicker">START WITH THE PROBLEM</p><h2>이런 상황에서 시작할 수 있습니다.</h2><span>시험 방법이나 시스템 사양이 정해져 있지 않아도 됩니다. 현재 겪고 있는 현상에서 필요한 접근 방법을 함께 정의합니다.</span></header>
-        <div class="en-problems">
-          <article class="en-reveal"><b>01</b><h3>특정 조건에서 진동이 커집니다.</h3><p>회전속도, 운전조건과 진동 데이터를 함께 분석해 가진 성분과 구조 응답을 구분합니다.</p></article>
-          <article class="en-reveal"><b>02</b><h3>원인을 알 수 없는 소음이 발생합니다.</h3><p>소음과 진동의 주요 주파수 성분과 조건별 변화를 비교해 원인 후보를 좁힙니다.</p></article>
-          <article class="en-reveal"><b>03</b><h3>같은 시험을 계속 외부에 맡기고 있습니다.</h3><p>반복 업무에 필요한 측정 절차와 판단 기준을 정리해 사내 운영 방법을 검토합니다.</p></article>
-          <article class="en-reveal"><b>04</b><h3>데이터는 쌓이지만 활용하지 못합니다.</h3><p>데이터 수집, 저장, 시각화와 판정 흐름을 연결해 상태 관리의 기반을 만듭니다.</p></article>
+<!-- ========================================================================
+     PROBLEMS
+     ==================================================================== -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">START WITH THE PROBLEM</div>
+        <h2>이런 경우 상담해 보세요.</h2>
+      </div>
+      <p class="section-sub">
+        복잡한 시험 계획이 준비되어 있지 않아도 괜찮습니다.
+        현재 발생하고 있는 현상과 제품의 운전조건을 알려주시면,
+        필요한 측정과 분석 방법부터 함께 검토합니다.
+      </p>
+    </header>
+
+    <div class="problems">
+      <div class="problem-row reveal">
+        <span class="problem-num mono">01</span>
+        <h3 class="problem-title">특정 RPM이나 운전조건에서만 진동이 커집니다.</h3>
+        <p class="problem-desc">회전속도, 운전조건과 진동 데이터를 함께 분석해 가진 성분과 구조 응답을 구분합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">02</span>
+        <h3 class="problem-title">원인을 알 수 없는 소음이나 이음이 발생합니다.</h3>
+        <p class="problem-desc">소음과 진동을 동시에 측정해 발생원과 전달경로를 좁힙니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">03</span>
+        <h3 class="problem-title">공진이 의심되지만 확인할 방법이 없습니다.</h3>
+        <p class="problem-desc">Impact Hammer Test와 운전 중 진동으로 고유진동수와 공진 여부를 확인합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">04</span>
+        <h3 class="problem-title">설계 변경 전후의 개선 효과를 정량적으로 확인하고 싶습니다.</h3>
+        <p class="problem-desc">동일 조건에서 반복 측정해 프로토타입 A/B/C의 개선 효과를 정량 비교합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">05</span>
+        <h3 class="problem-title">사내에 계측 장비가 없어 시험 자체가 어렵습니다.</h3>
+        <p class="problem-desc">가속도계·소음계·회전속도 취득 장비를 포함한 측정을 현장에서 직접 진행합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">06</span>
+        <h3 class="problem-title">데이터는 쌓이지만 어떻게 해석해야 할지 모르겠습니다.</h3>
+        <p class="problem-desc">보유한 데이터를 검토하고 원인 분석과 개선 방향에 대한 기술 자문을 제공합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">07</span>
+        <h3 class="problem-title">같은 시험을 매번 외부에 반복 의뢰하고 있습니다.</h3>
+        <p class="problem-desc">측정 절차와 판단 기준을 표준화해 사내 반복 운영 가능한 체계로 정리합니다.</p>
+      </div>
+      <div class="problem-row reveal">
+        <span class="problem-num mono">08</span>
+        <h3 class="problem-title">NVH 전담 인력을 채용할 정도의 업무량은 아닙니다.</h3>
+        <p class="problem-desc">필요할 때만 사내 NVH 엔지니어처럼 문제를 함께 정의하고 해결하는 파트너십 형태로 지원합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     APPROACH
+     ==================================================================== -->
+<section class="section approach" id="approach">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">OUR APPROACH <small>§02</small></div>
+        <h2>시험기관이 아닌, 문제 해결 파트너입니다.</h2>
+      </div>
+      <p class="section-sub">
+        요청한 시험 결과와 성적서를 전달하는 데서 멈추지 않고,
+        문제 정의부터 시험 설계, 측정, 원인 규명, 개선 방향까지
+        하나의 흐름으로 진행합니다.
+      </p>
+    </header>
+
+    <div class="timeline">
+      <div class="tl-row reveal">
+        <span class="tl-num mono">01</span>
+        <div class="tl-content">
+          <span class="tl-tag mono">DIAGNOSE</span>
+          <h3>문제 정의 및 진단</h3>
+          <p>현상과 운전조건을 파악하고 필요한 측정 항목과 분석 방법을 결정합니다.</p>
+        </div>
+        <div class="tl-detail">
+          <strong>WORKS</strong>
+          현상 인터뷰 · 사전 데이터 검토 · 측정 계획 수립
         </div>
       </div>
-    </section>
 
-    <section class="en-section en-dark" id="approach">
-      <div class="en-container">
-        <header class="en-heading en-reveal"><p class="en-kicker">OUR APPROACH</p><h2>일회성 시험을, 반복 가능한 기술로 전환합니다.</h2><span>문제의 원인을 찾는 데서 멈추지 않습니다. 현장에서 같은 기준으로 측정하고 판단할 수 있도록 방법과 도구를 연결합니다.</span></header>
-        <ol class="en-steps">
-          <li class="en-reveal"><b>01</b><small>DIAGNOSE</small><h3>문제 진단</h3><p>현상과 운전조건을 파악하고 필요한 데이터를 측정해 원인 후보를 분석합니다.</p></li>
-          <li class="en-reveal"><b>02</b><small>STANDARDIZE</small><h3>방법 표준화</h3><p>센서 위치, 운전조건, 분석 항목과 판단 기준을 정리합니다.</p></li>
-          <li class="en-reveal"><b>03</b><small>BUILD</small><h3>시스템 구현</h3><p>사용 환경에 맞춰 데이터 취득 하드웨어와 분석 소프트웨어를 구성합니다.</p></li>
-          <li class="en-reveal"><b>04</b><small>INTERNALIZE</small><h3>운영 내재화</h3><p>현장 사용자가 직접 측정하고 결과를 확인할 수 있도록 운영 체계를 이전합니다.</p></li>
-          <li class="en-reveal"><b>05</b><small>EVOLVE</small><h3>데이터 기반 확장</h3><p>축적 데이터를 상태 모니터링과 이상 징후 관리로 확장합니다.</p></li>
-        </ol>
-        <div class="en-compare en-reveal"><div><small>일반적인 시험 의뢰</small><strong>요청 시험 → 데이터·성적서</strong></div><i>VS</i><div><small>ENSOL LABS</small><strong>문제 정의 → 진단 → 시스템 → 내재화</strong></div></div>
-      </div>
-    </section>
-
-    <section class="en-section" id="solutions">
-      <div class="en-container">
-        <header class="en-heading en-reveal"><p class="en-kicker">INTEGRATED SOLUTIONS</p><h2>엔지니어링과 시스템 개발을 연결합니다.</h2><span>소음·진동에 대한 이해와 하드웨어·소프트웨어 구현 역량을 하나의 프로젝트 안에서 제공합니다.</span></header>
-        <div class="en-solutions">
-          <article class="en-reveal"><b>01</b><small>NVH ENGINEERING</small><h3>소음·진동 문제 진단</h3><p>제품과 설비의 현상을 측정하고 시간·주파수·운전조건 관점에서 분석해 개선 방향을 검토합니다.</p><ul><li>진동·소음 측정 및 분석</li><li>회전체 및 구조 공진 검토</li><li>설계 변경 전후 비교</li><li>보유 데이터 분석과 기술 자문</li></ul></article>
-          <article class="en-reveal"><b>02</b><small>MEASUREMENT HARDWARE</small><h3>전용 측정 시스템</h3><p>목적과 현장 환경에 맞춰 센서, 데이터 취득 장치, 통신과 사용 절차를 포함한 시스템을 설계·구성합니다.</p><ul><li>소음·진동·회전속도 취득</li><li>제품 검사 및 설비 점검 장치</li><li>간편 측정 인터페이스</li><li>기존 설비 및 시스템 연동</li></ul></article>
-          <article class="en-reveal"><b>03</b><small>SOFTWARE &amp; APPLICATION</small><h3>분석 소프트웨어와 앱</h3><p>범용 프로그램에 업무를 맞추는 대신 고객의 제품, 시험 절차와 사용자에 맞는 전용 소프트웨어를 구현합니다.</p><ul><li>데이터 수집·분석 프로그램</li><li>PC·웹·모바일 인터페이스</li><li>자동 판정과 리포트 생성</li><li>대시보드 및 데이터 관리</li></ul></article>
-          <article class="en-reveal"><b>04</b><small>CONDITION MONITORING</small><h3>상태 모니터링 기반</h3><p>설비에 적합한 측정 항목과 데이터 구조를 정의하고 변화 추세와 이상 징후를 관리할 수 있는 기반을 구축합니다.</p><ul><li>주기적·상시 데이터 수집</li><li>설비별 기준값과 추세 관리</li><li>이상 징후 시각화 및 알림</li><li>유지보수 판단 데이터 축적</li></ul></article>
+      <div class="tl-row reveal">
+        <span class="tl-num mono">02</span>
+        <div class="tl-content">
+          <span class="tl-tag mono">MEASURE</span>
+          <h3>측정 및 신호 분석</h3>
+          <p>가속도·소음·회전속도를 현장에서 취득하고 시간·주파수·차수 관점에서 분석합니다.</p>
+        </div>
+        <div class="tl-detail">
+          <strong>METHODS</strong>
+          Time History · FFT · PSD · Order Tracking · FRF
         </div>
       </div>
-    </section>
 
-    <section class="en-section en-white" id="applications">
-      <div class="en-container">
-        <header class="en-heading en-reveal"><p class="en-kicker">APPLICATION SCENARIOS</p><h2>현장의 목적에 맞는 형태로 구현합니다.</h2></header>
-        <div class="en-applications">
-          <article class="en-reveal"><b>A</b><div><small>DEVELOPMENT</small><h3>개발품 평가 시스템</h3><p>시제품과 설계 변경안의 소음·진동을 동일 조건에서 반복 측정하고 정량 비교합니다.</p></div></article>
-          <article class="en-reveal"><b>B</b><div><small>PRODUCTION</small><h3>생산 검사 시스템</h3><p>제품별 데이터를 자동 측정하고 정해진 기준에 따라 정상·이상을 판정합니다.</p></div></article>
-          <article class="en-reveal"><b>C</b><div><small>FIELD</small><h3>현장 간편 측정 시스템</h3><p>전문 분석 프로그램 없이도 작업자가 정해진 절차로 측정하고 결과를 확인합니다.</p></div></article>
-          <article class="en-reveal"><b>D</b><div><small>MAINTENANCE</small><h3>설비 상태 모니터링</h3><p>설비 데이터를 축적하고 시간에 따른 변화와 이상 징후를 지속적으로 관리합니다.</p></div></article>
+      <div class="tl-row reveal">
+        <span class="tl-num mono">03</span>
+        <div class="tl-content">
+          <span class="tl-tag mono">IDENTIFY</span>
+          <h3>원인 규명</h3>
+          <p>가진 성분과 구조 응답을 구분하고 공진·전달 경로 등 원인 후보를 좁힙니다.</p>
         </div>
-        <div class="en-industries en-reveal"><strong>적용 가능 분야</strong><div><span>모터·팬·펌프</span><span>로봇·자동화</span><span>산업기계·설비</span><span>전자·기구 제품</span><span>모빌리티 부품</span><span>스타트업 시제품</span></div></div>
+        <div class="tl-detail">
+          <strong>OUTPUT</strong>
+          원인 후보 · 근거 데이터 · 리스크 평가
+        </div>
       </div>
-    </section>
 
-    <section class="en-section en-capability">
-      <div class="en-container en-cap-layout">
-        <header class="en-heading en-reveal"><p class="en-kicker">WHY ENSOL LABS</p><h2>측정 기술과 개발 역량이 함께 있어야 가능한 접근입니다.</h2><span>소음·진동 데이터의 의미를 이해하는 것과 현장에서 지속적으로 사용할 도구를 만드는 역량을 연결합니다.</span></header>
-        <div class="en-cap-grid"><article class="en-reveal"><b>01</b><h3>Mechanical NVH</h3><p>측정, 신호분석, 운전조건 및 구조 응답 검토</p></article><article class="en-reveal"><b>02</b><h3>Hardware Integration</h3><p>센서, 데이터 취득, 통신 및 현장 시스템 구성</p></article><article class="en-reveal"><b>03</b><h3>Software Development</h3><p>데스크톱, 웹, 모바일 데이터 도구 구현</p></article><article class="en-reveal"><b>04</b><h3>Operational Design</h3><p>측정 표준, 판정 기준과 운영 흐름 설계</p></article></div>
+      <div class="tl-row reveal">
+        <span class="tl-num mono">04</span>
+        <div class="tl-content">
+          <span class="tl-tag mono">PROPOSE</span>
+          <h3>개선 방향 제안</h3>
+          <p>설계·체결·감쇠 등 개선 접근을 제안하고 재측정을 통해 효과를 정량 확인합니다.</p>
+        </div>
+        <div class="tl-detail">
+          <strong>OUTPUT</strong>
+          개선안 리포트 · 전·후 비교 데이터
+        </div>
       </div>
-    </section>
 
-    <section class="en-section en-roadmap" id="roadmap">
-      <div class="en-container">
-        <header class="en-heading en-reveal"><p class="en-kicker">TECHNOLOGY DIRECTION</p><h2>현장의 문제 해결 경험을, 더 쉽게 사용할 수 있는 기술로 발전시킵니다.</h2><span>맞춤형 엔지니어링과 시스템 개발을 기반으로 중소 제조기업이 쉽게 도입할 수 있는 측정 장비와 데이터 기반 설비 관리 기술을 개발합니다.</span></header>
-        <div class="en-road-track en-reveal"><article class="current"><small>NOW</small><h3>Engineering</h3><p>문제 진단과 데이터 분석</p></article><article><small>NEXT</small><h3>Custom System</h3><p>전용 측정 HW·SW 구축</p></article><article><small>DEVELOP</small><h3>Accessible Tools</h3><p>간편 측정 장비와 분석 도구</p></article><article><small>EVOLVE</small><h3>Condition Intelligence</h3><p>상태 모니터링과 예지보전</p></article></div>
-        <p class="en-note en-reveal"><strong>예지보전은 데이터 축적에서 시작합니다.</strong> 측정 목적과 기준을 먼저 정의하고, 신뢰할 수 있는 데이터를 쌓는 것부터 단계적으로 접근합니다.</p>
+      <div class="tl-row reveal">
+        <span class="tl-num mono">05</span>
+        <div class="tl-content">
+          <span class="tl-tag mono">INTERNALIZE · OPT</span>
+          <h3>사내 운영 지원 (선택)</h3>
+          <p>반복 측정이 필요한 경우 측정 절차와 판단 기준을 정리해 사내 운영 체계를 구축합니다.</p>
+        </div>
+        <div class="tl-detail">
+          <strong>OUTPUT</strong>
+          측정 SOP · 판정 기준 · 사내 교육 지원
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="en-section en-contact" id="contact">
-      <div class="en-container en-contact-layout">
-        <div class="en-reveal"><p class="en-kicker">START A CONVERSATION</p><h2>문제를 완벽하게 정리하지 않아도 괜찮습니다.</h2><p>제품과 발생 현상, 대략적인 운전조건만 알려주세요. 현재 문제의 진단이 필요한지, 반복 측정 시스템이 필요한지부터 함께 검토하겠습니다.</p><a class="en-mail" href="mailto:contact@ensol-labs.co.kr">contact@ensol-labs.co.kr ↗</a></div>
-        <div class="en-contact-options en-reveal"><a href="mailto:contact@ensol-labs.co.kr?subject=%5B기술문의%5D%20소음·진동%20문제%20상담&amp;body=제품·설비:%0D%0A발생%20현상:%0D%0A운전%20조건:%0D%0A현재까지%20확인한%20내용:%0D%0A"><b>01</b><div><small>PROBLEM SOLVING</small><h3>현재 문제를 해결하고 싶습니다.</h3><span>기술 상담 메일 작성하기 →</span></div></a><a href="mailto:contact@ensol-labs.co.kr?subject=%5B시스템문의%5D%20측정·관리%20시스템%20구축&amp;body=대상%20제품·설비:%0D%0A측정하려는%20항목:%0D%0A사용자와%20사용%20환경:%0D%0A필요한%20기능:%0D%0A"><b>02</b><div><small>SYSTEM BUILDING</small><h3>측정·관리 시스템을 구축하고 싶습니다.</h3><span>시스템 상담 메일 작성하기 →</span></div></a></div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     SOLUTIONS
+     ==================================================================== -->
+<section class="section" id="solutions">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">SERVICES <small>§03</small></div>
+        <h2>측정만, 분석만, 또는 전체 프로젝트.</h2>
       </div>
-    </section>
-  </main>
+      <p class="section-sub">
+        고객이 필요한 범위만큼만 이용할 수 있도록 서비스를 세분화했습니다.
+        데이터를 이미 가지고 있다면 데이터 분석만, 시험 장비가 없다면 측정부터 시작할 수 있습니다.
+      </p>
+    </header>
 
-  <footer class="en-footer"><div class="en-container"><div><a href="#top" class="en-brand"><span class="en-mark"><i></i><i></i><i></i><i></i><i></i></span><strong>ENSOL LABS</strong></a><p>Noise &amp; Vibration System Engineering</p></div><div><a href="mailto:contact@ensol-labs.co.kr">contact@ensol-labs.co.kr</a><p>© 2026 ENSOL LABS Co., Ltd. All rights reserved.</p></div></div></footer>
+    <div class="sol-list-wrap">
+      <div class="sol-row reveal">
+        <div class="sol-index mono">01<small>PROBLEM SOLVING</small></div>
+        <div class="sol-body">
+          <h3>제품 소음·진동 문제 해결</h3>
+          <p>제품 개발 중 발생하는 이상 진동, 이음, 특정 RPM 진동, 공진 등의 문제를 측정하고 원인을 분석합니다.</p>
+        </div>
+        <ul class="sol-tags">
+          <li>모터 및 회전체 진동</li>
+          <li>기계 구조물 공진</li>
+          <li>특정 운전조건 이상진동</li>
+          <li>제품 작동음 및 이음</li>
+          <li>구조 전달 진동</li>
+          <li>부품 변경 효과 분석</li>
+        </ul>
+      </div>
 
-  <script>
-    const toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');
-    toggle?.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));});
-    links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}));
-    if('IntersectionObserver'in window){const observer=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){item.target.classList.add('visible');observer.unobserve(item.target);}}),{threshold:.08});document.querySelectorAll('.en-reveal').forEach(el=>observer.observe(el));}else document.querySelectorAll('.en-reveal').forEach(el=>el.classList.add('visible'));
-  </script>
+      <div class="sol-row reveal">
+        <div class="sol-index mono">02<small>MEASUREMENT · ANALYSIS</small></div>
+        <div class="sol-body">
+          <h3>진동·소음 측정 및 분석</h3>
+          <p>가속도계와 소음계를 이용해 제품·구조물의 진동과 소음을 계측하고 시간·주파수 영역에서 분석합니다.</p>
+        </div>
+        <ul class="sol-tags">
+          <li>Time History</li>
+          <li>FFT · PSD</li>
+          <li>RMS · Peak</li>
+          <li>Order Tracking</li>
+          <li>Frequency Tracking</li>
+          <li>소음·진동 상관 분석</li>
+        </ul>
+      </div>
+
+      <div class="sol-row reveal">
+        <div class="sol-index mono">03<small>MODAL · RESONANCE</small></div>
+        <div class="sol-body">
+          <h3>구조 진동 및 공진 분석</h3>
+          <p>제품 구조의 고유진동수를 확인하고 운전 조건에서 공진이 발생하는지 검증합니다.</p>
+        </div>
+        <ul class="sol-tags">
+          <li>Impact Hammer Test</li>
+          <li>FRF 측정</li>
+          <li>Natural Frequency</li>
+          <li>Modal Analysis</li>
+          <li>Operating Deflection</li>
+          <li>공진 회피 설계 자문</li>
+        </ul>
+      </div>
+
+      <div class="sol-row reveal">
+        <div class="sol-index mono">04<small>DATA REVIEW · ADVISORY</small></div>
+        <div class="sol-body">
+          <h3>데이터 분석 및 기술 자문</h3>
+          <p>이미 보유한 측정 데이터를 검토하고, 원인 분석과 개선 방향에 대한 기술 자문을 제공합니다.</p>
+        </div>
+        <ul class="sol-tags">
+          <li>보유 데이터 재분석</li>
+          <li>측정 방법 검토</li>
+          <li>결과 해석 자문</li>
+          <li>시험 계획 자문</li>
+          <li>개선안 검토</li>
+          <li>원격 상담 가능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     FAQ
+     ==================================================================== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">NVH FAQ</div>
+        <h2>소음·진동 측정과 NVH 시험, 무엇부터 확인해야 할까요?</h2>
+      </div>
+      <p class="section-sub">
+        시험 방법을 정하지 못한 상태에서도 상담할 수 있습니다.
+        제품의 문제 현상과 운전조건을 기준으로 필요한 측정과 분석 범위를 정합니다.
+      </p>
+    </header>
+
+    <dl class="faq-list">
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">01</span>
+        <dt>소음진동 측정을 의뢰하기 전에 무엇을 준비해야 하나요?</dt>
+        <dd>제품 또는 설비의 종류, 문제가 발생하는 회전속도·부하·온도 등 운전조건과 관찰한 현상을 알려주시면 됩니다. 시험 항목이나 센서 위치를 미리 정하지 않아도 현상 검토 후 측정 계획부터 함께 수립할 수 있습니다.</dd>
+      </div>
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">02</span>
+        <dt>특정 RPM에서만 진동이 커지는 원인은 어떻게 찾나요?</dt>
+        <dd>회전속도와 진동을 동시에 측정한 뒤 FFT, Frequency Tracking, Order Tracking으로 회전 기진 성분을 확인합니다. 필요하면 FRF 측정과 공진 시험을 추가해 구조 고유진동수와 운전 성분이 겹치는지 검토합니다.</dd>
+      </div>
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">03</span>
+        <dt>제품에서 발생하는 이상 소음이나 이음의 원인도 분석할 수 있나요?</dt>
+        <dd>소음과 진동을 함께 측정하고 운전조건별 주파수 변화를 비교해 발생원과 전달 경로를 좁힙니다. 모터, 팬, 펌프, 감속기와 구조물에서 발생하는 주기성 소음과 특정 조건의 이음을 분석할 수 있습니다.</dd>
+      </div>
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">04</span>
+        <dt>일반 소음진동 측정과 NVH 시험은 무엇이 다른가요?</dt>
+        <dd>단순 측정은 크기와 기준 충족 여부를 확인하는 데 집중합니다. NVH 시험은 시간 이력, FFT, PSD, 차수, FRF 등 여러 데이터를 연결해 소음·진동이 발생하는 원인과 제품 설계의 개선 방향까지 검토하는 과정입니다.</dd>
+      </div>
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">05</span>
+        <dt>이미 측정한 진동 데이터만 보내도 분석할 수 있나요?</dt>
+        <dd>가능합니다. 보유한 원시 데이터, 측정 조건과 센서 정보를 검토해 재분석하고 결과 해석과 추가 시험 필요성을 제안합니다. 데이터 형식과 품질에 따라 가능한 분석 범위는 상담 과정에서 안내합니다.</dd>
+      </div>
+      <div class="faq-row reveal">
+        <span class="faq-mark" aria-hidden="true">06</span>
+        <dt>반복하는 NVH 시험을 사내 측정 시스템으로 만들 수 있나요?</dt>
+        <dd>반복 측정이 필요한 경우 센서 위치, 시험 조건, 분석 항목과 판정 기준을 표준화할 수 있습니다. 이후 사용 환경에 맞는 데이터 취득 하드웨어와 분석 소프트웨어를 구성해 사내 운영 체계로 내재화하는 방안을 검토합니다.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ========================================================================
+     CONTACT
+     ==================================================================== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">START A CONVERSATION <small>§04</small></div>
+    <h2 class="contact-headline reveal">
+      문제를 완벽하게 정리하지 않아도<br><em>괜찮습니다.</em>
+    </h2>
+    <p class="contact-lead reveal">
+      제품과 발생 현상, 대략적인 운전조건만 알려주세요.
+      현재 문제의 진단이 필요한지, 반복 측정이 필요한지부터 함께 검토하겠습니다.
+    </p>
+    <a class="contact-mail reveal" href="mailto:contact@ensol-labs.co.kr">
+      <span>contact@ensol-labs.co.kr</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+
+    <div class="contact-cards reveal">
+      <a class="contact-card" href="mailto:contact@ensol-labs.co.kr?subject=%5B기술문의%5D%20소음·진동%20문제%20상담">
+        <span class="arrow" aria-hidden="true">↗</span>
+        <h3>현재 문제를<br>해결하고 싶습니다.</h3>
+        <p>이상 진동·이음·공진 등 발생 중인 문제를 상담합니다.</p>
+        <ul class="tags">
+          <li>이상 진동</li><li>소음·이음</li><li>공진</li>
+        </ul>
+      </a>
+      <a class="contact-card" href="mailto:contact@ensol-labs.co.kr?subject=%5B측정문의%5D%20진동·소음%20측정%20및%20분석">
+        <span class="arrow" aria-hidden="true">↗</span>
+        <h3>진동·소음 측정 및<br>분석이 필요합니다.</h3>
+        <p>현장 계측부터 데이터 분석까지 함께 진행합니다.</p>
+        <ul class="tags">
+          <li>현장 측정</li><li>FFT · Order</li><li>FRF</li>
+        </ul>
+      </a>
+      <a class="contact-card" href="mailto:contact@ensol-labs.co.kr?subject=%5B자문문의%5D%20보유%20데이터%20기술%20자문">
+        <span class="arrow" aria-hidden="true">↗</span>
+        <h3>보유 데이터에 대한<br>기술 자문이 필요합니다.</h3>
+        <p>이미 수집된 데이터의 재분석과 원격 상담이 가능합니다.</p>
+        <ul class="tags">
+          <li>데이터 재분석</li><li>원격 상담</li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================================================================
+     FOOTER
+     ==================================================================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="ENSOL LABS 홈">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="brand-name">ENSOL LABS <em>Co., Ltd.</em></span>
+        </a>
+        <p>
+          <span>Noise &amp; Vibration Engineering Service</span>
+          <span>소음·진동 문제 진단, 측정, 분석, 시스템 구현.</span>
+        </p>
+      </div>
+      <div class="foot-col">
+        <small>SITEMAP</small>
+        <nav class="foot-links" aria-label="푸터 메뉴">
+          <a href="#problems">문제</a>
+          <a href="#approach">접근 방식</a>
+          <a href="#solutions">서비스</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">문의</a>
+        </nav>
+      </div>
+      <div class="foot-col">
+        <small>CONTACT</small>
+        <a href="mailto:contact@ensol-labs.co.kr">contact@ensol-labs.co.kr</a>
+        <address class="foot-address">서울특별시 영등포구 국회대로36길 6-1,<br>2층 엠102호(당산동3가)</address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ENSOL LABS Co., Ltd. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="top-button" id="topButton" type="button" aria-label="페이지 맨 위로 이동">
+  <span aria-hidden="true">↑</span>
+  <small aria-hidden="true">TOP</small>
+</button>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  const topButton = document.getElementById('topButton');
+  toggle?.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  links?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  const updateTopButton = () => {
+    topButton?.classList.toggle('visible', window.scrollY > 420);
+  };
+  window.addEventListener('scroll', updateTopButton, { passive: true });
+  updateTopButton();
+  topButton?.addEventListener('click', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: .08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
+</script>
 </body>
 </html>
